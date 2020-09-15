@@ -29,4 +29,5 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     {
         Pressed = false;
     }
+   
 }

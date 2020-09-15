@@ -11,10 +11,7 @@ public class ApplePicker : MonoBehaviour
     public GameObject targetHoma;
 
     public float secondApple;
-    float chanceTochange = 0.1f;
-
-
-    // Start is called before the first frame update
+       // Start is called before the first frame update
     void Start()
     {
         Invoke("DropApple", 2f);
@@ -23,9 +20,6 @@ public class ApplePicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-      
-     //  transform.RotateAround(targetHoma.transform.position, Vector2.up, 35 * Time.deltaTime);
          Vector3 positionPicker = transform.position;
          positionPicker.x += speedMove * Time.deltaTime;
          transform.position = positionPicker;
@@ -33,19 +27,12 @@ public class ApplePicker : MonoBehaviour
          if (positionPicker.x < -leftAndRightEdge)
          {
              speedMove = Mathf.Abs(speedMove);
-         }else if(positionPicker.x > leftAndRightEdge)
+         }else if(positionPicker.x > leftAndRightEdge*2)
          {
              speedMove = -Mathf.Abs(speedMove);
          }
     }
-    private void FixedUpdate()
-    {
-        if (Random.value < chanceTochange)
-        {
-            speedMove *= -1;
-        }
-    }
-
+ 
     void DropApple()
     {
         GameObject apple = Instantiate(applePrefab);

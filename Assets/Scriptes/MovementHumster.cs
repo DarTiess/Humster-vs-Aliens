@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AppleShooter))]
 public class MovementHumster : MonoBehaviour
 {
+    private AppleShooter appleShooter { get; set; }
     public float maxSpeed = 10.0f;
     private bool isTurnRight = true;
 
@@ -18,6 +20,7 @@ public class MovementHumster : MonoBehaviour
 
     public FixedJoystick Joystick;
     public FixedButton JumpButton;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,7 @@ public class MovementHumster : MonoBehaviour
             animator.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0, 300));
         }
+       
     }
     // Update is called once per frame
     void FixedUpdate()
