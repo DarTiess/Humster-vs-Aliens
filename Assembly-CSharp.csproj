@@ -78,6 +78,7 @@
     <Compile Include="Assets\MobileJoystick\Scripts\Button.cs" />
     <Compile Include="Assets\MobileJoystick\Scripts\Example\BoxMover.cs" />
     <Compile Include="Assets\MobileJoystick\Scripts\TouchField.cs" />
+    <Compile Include="Assets\Scriptes\AlienGenerator.cs" />
     <Compile Include="Assets\Scriptes\Apple.cs" />
     <Compile Include="Assets\Scriptes\ApplePicker.cs" />
     <Compile Include="Assets\Scriptes\AppleShooter.cs" />

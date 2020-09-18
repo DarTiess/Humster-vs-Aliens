@@ -26,10 +26,7 @@ public class AppleShooter : MonoBehaviour
        /*  Quaternion rotation = Quaternion.LookRotation(EnemyPosition.position - pushPoint.transform.position);
          pushPoint.transform.rotation = rotation;
        */
-        if (PushAppleButton.Pressed)
-        {
-            PushApple();
-        }
+        
     }
 
 
