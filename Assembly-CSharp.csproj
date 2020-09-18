@@ -75,8 +75,6 @@
     <Compile Include="Assets\Foliage2D\Scripts\Foliage2D_Mesh.cs" />
     <Compile Include="Assets\Foliage2D\Scripts\Foliage2D_Path.cs" />
     <Compile Include="Assets\Foliage2D\Scripts\Foliage2D_PrefabTracker.cs" />
-    <Compile Include="Assets\FurnishedCabin\Scripts\MoveObjectController.cs" />
-    <Compile Include="Assets\FurnishedCabin\Scripts\MoveableObject.cs" />
     <Compile Include="Assets\MobileJoystick\Scripts\Button.cs" />
     <Compile Include="Assets\MobileJoystick\Scripts\Example\BoxMover.cs" />
     <Compile Include="Assets\MobileJoystick\Scripts\TouchField.cs" />
@@ -87,6 +85,7 @@
     <Compile Include="Assets\Scriptes\FixedButton.cs" />
     <Compile Include="Assets\Scriptes\FixedJoystick.cs" />
     <Compile Include="Assets\Scriptes\Joystick.cs" />
+    <Compile Include="Assets\Scriptes\Laser.cs" />
     <Compile Include="Assets\Scriptes\MovementHumster.cs" />
     <None Include="Assets\Foliage2D\Docs\Log.txt" />
     <None Include="Assets\Foliage2D\Example\Scenes\Parallax.txt" />

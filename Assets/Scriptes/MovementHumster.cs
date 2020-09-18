@@ -20,6 +20,9 @@ public class MovementHumster : MonoBehaviour
 
     public FixedJoystick Joystick;
     public FixedButton JumpButton;
+
+    public GameObject damagePoint;
+    public Sprite damageSprite;
    
     // Start is called before the first frame update
     void Start()
@@ -78,5 +81,31 @@ public class MovementHumster : MonoBehaviour
 
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Laser")
+        {
+            animator.SetBool("Loose", true);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            StartCoroutine(TakeDamage());
+
+        }
+    }
+
+      private IEnumerator TakeDamage()
+    {
+        animator.SetBool("Loose", true);
+        damagePoint.GetComponent<SpriteRenderer>().sprite = damageSprite;
+        yield return new WaitForSeconds(0.5f);
+        damagePoint.GetComponent<SpriteRenderer>().sprite = null;
+        animator.SetBool("Loose", false);
     }
 }

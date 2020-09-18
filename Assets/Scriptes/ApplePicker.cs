@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ApplePicker : MonoBehaviour
 {
-    public GameObject applePrefab;
+    public GameObject laserPrefab;
     public float speedMove = 1.0f;
     public float leftAndRightEdge;
-    public GameObject targetHoma;
+    
+    public Sprite spriteAttacked;
+    public Sprite spriteNormal;
 
     public float secondApple;
        // Start is called before the first frame update
@@ -31,12 +33,39 @@ public class ApplePicker : MonoBehaviour
          {
              speedMove = -Mathf.Abs(speedMove);
          }
+
+        
+       
     }
  
     void DropApple()
     {
-        GameObject apple = Instantiate(applePrefab);
-        apple.transform.position = transform.position;
+        GameObject laser = Instantiate(laserPrefab);
+        laser.transform.position = transform.position;
         Invoke("DropApple", secondApple);
     }
+
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "apple")
+        {
+            StartCoroutine(TakeDamage());
+        }
+    }
+    private IEnumerator TakeDamage()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = spriteAttacked;
+        yield return new WaitForSeconds(0.5f);
+        this.GetComponent<SpriteRenderer>().sprite = spriteNormal;
+        yield return new WaitForSeconds(0.5f);
+        this.GetComponent<SpriteRenderer>().sprite = spriteAttacked;
+        yield return new WaitForSeconds(0.2f);
+        this.GetComponent<SpriteRenderer>().sprite = spriteNormal;
+    }
+   
+    
+
+
 }
