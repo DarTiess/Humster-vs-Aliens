@@ -10,10 +10,9 @@ public class AlienGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         for(int j = 0; j < 3; j++)
-        {
+       
             StartCoroutine(CreateAliens());
-        }
+        
     }
 
     // Update is called once per frame
@@ -24,11 +23,12 @@ public class AlienGenerator : MonoBehaviour
 
     private IEnumerator CreateAliens()
     {
-        for (int i = 0; i < aliensPrefab.Count; i++)
+        for (int i = 0; i < 10; i++)
             {
+            int randomAlien = Random.Range(0, aliensPrefab.Count);
 
             yield return new WaitForSeconds(2f);
-            CreateOneAlien(aliensPrefab[i]);
+            CreateOneAlien(aliensPrefab[randomAlien]);
            
         }
         yield return new WaitForSeconds(2f);

@@ -1469,6 +1469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: alien2
       objectReference: {fileID: 0}
+    - target: {fileID: 5258506201597642708, guid: 07a62c8ed472e76458a636a7c2a812ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Alien
+      objectReference: {fileID: 0}
     - target: {fileID: 5258506201597642711, guid: 07a62c8ed472e76458a636a7c2a812ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1477,7 +1482,7 @@ PrefabInstance:
     - target: {fileID: 5258506201597642711, guid: 07a62c8ed472e76458a636a7c2a812ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.63
+      value: 16.05
       objectReference: {fileID: 0}
     - target: {fileID: 5258506201597642711, guid: 07a62c8ed472e76458a636a7c2a812ab,
         type: 3}
@@ -1612,7 +1617,7 @@ PrefabInstance:
     - target: {fileID: 23208135665965340, guid: 2e3a4c23f962fac4682bce812d4cd381,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 23208135665965340, guid: 2e3a4c23f962fac4682bce812d4cd381,
         type: 3}
@@ -2673,6 +2678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: alien1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258506201597642708, guid: 13b642753dc028f4d9084935329b6276,
+        type: 3}
+      propertyPath: m_TagString
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 5258506201597642711, guid: 13b642753dc028f4d9084935329b6276,
         type: 3}

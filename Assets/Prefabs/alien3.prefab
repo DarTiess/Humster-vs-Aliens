@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5258506201597642704}
   m_Layer: 0
   m_Name: alien3
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   spriteAttacked: {fileID: 21300000, guid: dfa5b4f1e6146b9478d1f608d9f0617f, type: 3}
   spriteNormal: {fileID: 21300000, guid: 248cd338e1076cd48b023a82ed78a6c7, type: 3}
   secondApple: 4
+  aliensLifes: 10
 --- !u!58 &5258506201597642704
 CircleCollider2D:
   m_ObjectHideFlags: 0

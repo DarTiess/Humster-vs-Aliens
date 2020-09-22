@@ -5,7 +5,7 @@ using UnityEngine;
 public class Apple : MonoBehaviour
 {
 
-    public static float bottomY = -20f;
+    public static float bottomY = 18f;
  
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class Apple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < bottomY)
+        if (transform.position.y > bottomY)
         {
             Destroy(this.gameObject);
         }
@@ -33,6 +33,10 @@ public class Apple : MonoBehaviour
             positionPicker.z -= 10f * Time.deltaTime;
             transform.position = positionPicker;
           */
+        }
+        if (collision.gameObject.tag == "Alien")
+        {
+            Destroy(this.gameObject);
         }
     }
 

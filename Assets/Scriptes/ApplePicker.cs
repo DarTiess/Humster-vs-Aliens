@@ -7,16 +7,16 @@ public class ApplePicker : MonoBehaviour
 {
     public GameObject laserPrefab;
     public float speedMove = 1.0f;
-    public float leftAndRightEdge;
     
     public Sprite spriteAttacked;
     public Sprite spriteNormal;
 
     public float secondApple;
+    public float aliensLifes=10f;
        // Start is called before the first frame update
     void Start()
     {
-        Invoke("DropApple", 2f);
+        Invoke("DropLaser", 2f);
     }
 
     // Update is called once per frame
@@ -26,10 +26,14 @@ public class ApplePicker : MonoBehaviour
          positionPicker.x += speedMove * Time.deltaTime;
          transform.position = positionPicker;
 
-         if (positionPicker.x < -leftAndRightEdge)
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        if (positionPicker.x < min.x)
          {
              speedMove = Mathf.Abs(speedMove);
-         }else if(positionPicker.x > leftAndRightEdge*2)
+         }
+        else if(positionPicker.x > max.x)
          {
              speedMove = -Mathf.Abs(speedMove);
          }
@@ -38,11 +42,11 @@ public class ApplePicker : MonoBehaviour
        
     }
  
-    void DropApple()
+    void DropLaser()
     {
         GameObject laser = Instantiate(laserPrefab);
         laser.transform.position = transform.position;
-        Invoke("DropApple", secondApple);
+        Invoke("DropLaser", secondApple);
     }
 
    
@@ -52,10 +56,13 @@ public class ApplePicker : MonoBehaviour
         if (collision.transform.tag == "apple")
         {
             StartCoroutine(TakeDamage());
+
         }
     }
     private IEnumerator TakeDamage()
     {
+        if (aliensLifes > 0) { 
+        aliensLifes--;
         this.GetComponent<SpriteRenderer>().sprite = spriteAttacked;
         yield return new WaitForSeconds(0.5f);
         this.GetComponent<SpriteRenderer>().sprite = spriteNormal;
@@ -63,6 +70,11 @@ public class ApplePicker : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = spriteAttacked;
         yield return new WaitForSeconds(0.2f);
         this.GetComponent<SpriteRenderer>().sprite = spriteNormal;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
    
     

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scriptes\Apple.cs" />
     <Compile Include="Assets\Scriptes\ApplePicker.cs" />
     <Compile Include="Assets\Scriptes\AppleShooter.cs" />
+    <Compile Include="Assets\Scriptes\BoundsCheck.cs" />
     <Compile Include="Assets\Scriptes\CammeraFollow.cs" />
     <Compile Include="Assets\Scriptes\FixedButton.cs" />
     <Compile Include="Assets\Scriptes\FixedJoystick.cs" />

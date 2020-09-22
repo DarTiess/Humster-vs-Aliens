@@ -46,21 +46,32 @@ public class AppleShooter : MonoBehaviour
         applesGameObject= Instantiate(applePrefab);
         applesGameObject.transform.position = transform.position;
        appleScore.text = (apples - 1).ToString(); 
-      
     }
 
     public void AppleAttack()
     {
-         foreach( GameObject point in pushPoint)
-        {
-         GameObject readyApple = Instantiate(applePrefab,point.transform.position, rotation: Quaternion.identity) as GameObject;
-       
-
-        readyApple.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(point.transform.up * 15f);
-        }
-       
-      
+        StartCoroutine(Attack());
     }
+
+    private IEnumerator Attack()
+    {
+        foreach( GameObject point in pushPoint)
+        {
+            StartCoroutine(MakePullAttack(point));  
+            yield return new WaitForSeconds(3f);
+        }
+        
+    }
+
+
+    private IEnumerator MakePullAttack(GameObject pointer)
+    {
+        GameObject readyApple = Instantiate(applePrefab, pointer.transform.position, rotation: Quaternion.identity) as GameObject;
+        readyApple.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(pointer.transform.up * 15f);
+        yield return new WaitForSeconds(3f);
+    }
+
+  
 
   
 
