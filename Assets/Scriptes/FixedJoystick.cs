@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace DitzeGames.MobileJoystick
+{
+
 public class FixedJoystick : Joystick
 {
     [Header("Fixed Joystick")]
@@ -31,4 +34,5 @@ public class FixedJoystick : Joystick
         inputVector = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }
+}
 }

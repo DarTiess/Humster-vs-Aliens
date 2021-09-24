@@ -23,9 +23,7 @@ public class AppleShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /*  Quaternion rotation = Quaternion.LookRotation(EnemyPosition.position - pushPoint.transform.position);
-         pushPoint.transform.rotation = rotation;
-       */
+    
         
     }
 
@@ -58,7 +56,7 @@ public class AppleShooter : MonoBehaviour
         foreach( GameObject point in pushPoint)
         {
             StartCoroutine(MakePullAttack(point));  
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(0.5f);
         }
         
     }
@@ -68,7 +66,7 @@ public class AppleShooter : MonoBehaviour
     {
         GameObject readyApple = Instantiate(applePrefab, pointer.transform.position, rotation: Quaternion.identity) as GameObject;
         readyApple.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(pointer.transform.up * 15f);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.2f);
     }
 
   

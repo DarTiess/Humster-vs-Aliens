@@ -7,6 +7,7 @@ TagManager:
   - apple
   - Laser
   - Alien
+  - Spike
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: Apple
     uniqueID: 1983555157
+    locked: 0
+  - name: UI
+    uniqueID: 2126286927
     locked: 0
